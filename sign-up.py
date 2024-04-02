@@ -62,6 +62,6 @@ def hello_http(request):
 
 	###
 	### Add code here to take the user through the sign up flow.
-  ### The end goal is to establish the link between the JWT claim's <sub> value and the new user account in your SaaS system
+	### The end goal is to establish the link between the JWT claim's <sub> value and the new user account in your SaaS system
 	###
-	return '<h1>Success</h1><h3>Decoded JWT</h3><pre>{}</pre><h3>Headers</h3><pre>{}</pre><h3>Decoded JWT</h3><pre>{}</pre>'.format(idinfo,request.headers,jwt_claim)
+	return '<h1>Sign-up Success! <a href="https://cloud.google.com/marketplace/docs/partners/integrated-saas/frontend-integration#verify_the_users_sign_up_information" rel=”noreferrer”>GCP documentation</a></h1><h3>Decoded JWT</h3><pre>{}</pre><h3>DEBUG: HTTP Header</h3><pre>{}</pre><h3>DEBUG: x-gcp-marketplace-token</h3><pre>{}</pre>'.format(json.dumps(jwt_claim, indent=4),request.headers,request_token)
